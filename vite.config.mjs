@@ -5,6 +5,7 @@ import tagger from "@dhiwise/component-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:"/"
   // Using standard dist directory for Vercel deployment
   build: {
     outDir: "dist",
