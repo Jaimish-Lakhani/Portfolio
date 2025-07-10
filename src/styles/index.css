@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  /* Improve text rendering on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+/* Custom Utility Classes */
+.border-3 {
+  border-width: 3px;
+}
+
+/* Enhanced Profile Picture Styles */
+.profile-picture {
+  /* Enhance image quality */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Smooth scaling for larger sizes */
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-container {
+  /* Add enhanced shadow for larger profile pictures */
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  /* Smooth transitions for hover effects */
+  transition: all 0.3s ease;
+}
+
+.profile-container:hover {
+  /* Subtle scale on hover */
+  transform: scale(1.02);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Rounded rectangle profile picture specific styles */
+.profile-container.rounded-rect {
+  /* Enhanced shadow for rectangular profile */
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.18));
+  /* Smooth border radius transitions */
+  border-radius: 1rem;
+}
+
+.profile-container.rounded-rect:hover {
+  /* Enhanced scale and shadow for rectangular profile */
+  transform: scale(1.03) translateY(-2px);
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.25));
+}
+
+/* Dark theme profile picture adjustments */
+.dark .profile-container {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
+}
+
+.dark .profile-container:hover {
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+}
+
+.dark .profile-container.rounded-rect {
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+}
+
+.dark .profile-container.rounded-rect:hover {
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.8));
+}
+
+/* Mobile Menu Animations */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-top {
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.4s ease-out;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  body {
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+  
+  /* Ensure proper touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
