@@ -10,24 +10,24 @@ const CodeBlock = ({
   const { theme } = useTheme();
 
   const getCodeBlockClasses = () => {
-    const baseClasses = 'font-mono text-sm leading-relaxed overflow-x-auto p-4 rounded-lg';
+    const baseClasses = 'font-mono text-sm leading-relaxed overflow-x-auto p-4 rounded-lg dark-scrollbar';
     
     switch (theme) {
       case 'dark':
-        return `${baseClasses} bg-slate-900 text-slate-50 border border-slate-700`;
+        return `${baseClasses} bg-black text-slate-50 border border-gray-700`;
       default: // light
-        return `${baseClasses} bg-slate-800 text-slate-50 border border-slate-600`;
+        return `${baseClasses} bg-black text-slate-50 border border-gray-600`;
     }
   };
 
   const getTerminalClasses = () => {
-    const baseClasses = 'font-mono text-sm p-4 rounded-lg min-h-16';
+    const baseClasses = 'font-mono text-sm p-4 rounded-lg min-h-16 dark-scrollbar';
     
     switch (theme) {
       case 'dark':
-        return `${baseClasses} bg-slate-700 text-green-400 border border-slate-600`;
+        return `${baseClasses} bg-black text-green-400 border border-gray-700`;
       default: // light
-        return `${baseClasses} bg-slate-800 text-green-400 border border-slate-600`;
+        return `${baseClasses} bg-black text-green-400 border border-gray-600`;
     }
   };
 

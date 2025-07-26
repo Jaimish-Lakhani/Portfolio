@@ -4,7 +4,7 @@ import Button from '../../../components/ui/Button';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-background via-surface to-background-secondary py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-background py-20 lg:py-32 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 border border-accent rounded-full"></div>
@@ -18,7 +18,7 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center">
                   <Icon name="Users" size={24} color="white" />
                 </div>
                 <span className="text-accent font-semibold text-lg">Collaboration Studio</span>

@@ -150,7 +150,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               alt={project.title}
               className="w-full h-64 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+            <div className="absolute inset-0 bg-primary/80" />
             
             {/* Close Button */}
             <button

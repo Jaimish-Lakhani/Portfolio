@@ -48,7 +48,7 @@ const ThemeToggle = ({ className = "", size = "md" }) => {
     >
       {/* Background animation */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-accent/10 to-brand-secondary/10"
+        className="absolute inset-0 bg-surface"
         initial={{ opacity: 0 }}
         whileHover={{ opacity: 1 }}
         transition={{ duration: 0.2 }}

@@ -6,7 +6,7 @@ const ArchitectureDiagram = ({ architecture }) => {
 
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl overflow-hidden">
-      <div className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-6 py-4">
+      <div className="bg-brand-primary text-white px-6 py-4">
         <div className="flex items-center space-x-3">
           <Icon name="Network" size={24} />
           <div>
@@ -27,7 +27,7 @@ const ArchitectureDiagram = ({ architecture }) => {
                 {architecture.layers.map((layer, idx) => (
                   <div key={idx} className="relative">
                     <div className="flex items-center space-x-4 p-4 bg-surface rounded-lg border border-surface-secondary">
-                      <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-brand-secondary rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center">
                         <Icon name={layer.icon} size={20} color="white" />
                       </div>
                       <div className="flex-1">

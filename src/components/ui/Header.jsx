@@ -70,7 +70,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo/Brand */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-accent to-brand-secondary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
               <Icon name="Code" size={16} className="text-white" />
             </div>
             <span className="font-bold text-text-primary">Portfolio</span>
@@ -98,9 +98,6 @@ const Header = () => {
                   />
                   <span>{item.name}</span>
                 </div>
-                {isActivePath(item.path) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-accent rounded-full"></div>
-                )}
               </Link>
             ))}
           </nav>
@@ -190,9 +187,6 @@ const Header = () => {
                       />
                     </div>
                     <span className="flex-1">{item.name}</span>
-                    {isActivePath(item.path) && (
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                    )}
                   </Link>
                 ))}
               </nav>

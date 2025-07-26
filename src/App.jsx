@@ -5,7 +5,9 @@ import { ThemeProvider } from "contexts/ThemeContext";
 function App() {
   return (
     <ThemeProvider>
-      <Routes />
+      <div className="relative">
+        <Routes />
+      </div>
     </ThemeProvider>
   );
 }

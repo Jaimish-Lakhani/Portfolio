@@ -287,7 +287,7 @@ const SkillsVisualization = () => {
                   </div>
                   <div className="w-full bg-surface-secondary rounded-full h-3">
                     <div
-                      className="bg-gradient-to-r from-accent to-brand-secondary h-3 rounded-full transition-all duration-1000 ease-out"
+                      className="bg-brand-primary h-3 rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>

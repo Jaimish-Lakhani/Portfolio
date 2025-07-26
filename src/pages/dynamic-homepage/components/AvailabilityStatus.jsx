@@ -174,7 +174,7 @@ const AvailabilityStatus = () => {
             </div>
             <div className="w-full bg-surface-secondary rounded-full h-3 mb-2">
               <div
-                className="bg-gradient-to-r from-success to-accent h-3 rounded-full transition-all duration-500"
+                className="bg-success h-3 rounded-full transition-all duration-500"
                 style={{ width: `${calculateProjectCapacity()}%` }}
               />
             </div>

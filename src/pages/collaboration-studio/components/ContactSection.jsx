@@ -342,7 +342,7 @@ const ContactSection = () => {
             </div>
 
             {/* Availability Status */}
-            <div className="card p-6 bg-gradient-to-br from-conversion-accent/5 to-conversion-accent/10">
+            <div className="card p-6 bg-surface">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-3 h-3 bg-conversion-accent rounded-full animate-pulse"></div>
                 <h4 className="font-semibold text-text-primary">Current Availability</h4>

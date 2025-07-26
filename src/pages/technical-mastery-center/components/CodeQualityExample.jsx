@@ -31,7 +31,7 @@ const CodeQualityExample = ({ example }) => {
 
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl overflow-hidden">
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-4">
+      <div className="bg-purple-600 text-white px-6 py-4">
         <div className="flex items-center space-x-3">
           <Icon name="Code2" size={24} />
           <div>

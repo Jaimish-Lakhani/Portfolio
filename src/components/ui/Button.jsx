@@ -116,7 +116,7 @@ const Button = React.forwardRef(({
                     ${className}
                     `;
 
-    return (
+    const buttonElement = (
         <button
             ref={ref}
             type={type}
@@ -131,6 +131,8 @@ const Button = React.forwardRef(({
             {(icon || iconName) && iconPosition === 'right' && renderIcon()}
         </button>
     );
+
+    return buttonElement;
 });
 
 export default Button;

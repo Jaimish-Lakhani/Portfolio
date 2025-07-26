@@ -146,7 +146,7 @@ const TimelineNode = ({ node, isLeft, isActive, onClick }) => {
                           alt={image.caption}
                           className="w-full h-24 object-cover hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div className="absolute inset-0 bg-primary/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                           <p className="text-white text-xs p-2 font-medium">
                             {image.caption}
                           </p>

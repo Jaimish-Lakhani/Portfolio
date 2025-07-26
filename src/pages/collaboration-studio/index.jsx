@@ -18,15 +18,15 @@ const CollaborationStudio = () => {
       </Helmet>
       
       <Header />
-      
-      <main className="pt-16 lg:pt-20">
-        <HeroSection />
-        <CollaborationContexts />
-        <CommunicationArtifacts />
-        <TestimonialsSection />
-        <PartnershipPhilosophy />
-        <ContactSection />
-      </main>
+    
+    <main className="pt-16 lg:pt-20">
+      <HeroSection />
+      <CollaborationContexts />
+      <CommunicationArtifacts />
+      <TestimonialsSection />
+      <PartnershipPhilosophy />
+      <ContactSection />
+    </main>
     </div>
   );
 };

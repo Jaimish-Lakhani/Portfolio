@@ -6,7 +6,7 @@ const CommunityInvolvementCard = ({ involvement }) => {
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl p-6 hover:shadow-lg transition-all duration-300">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-600 rounded-lg flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
           <Icon name={involvement.icon} size={24} color="white" />
         </div>
         <div className="flex-1">

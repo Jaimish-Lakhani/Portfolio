@@ -63,7 +63,7 @@ const PhilosophySection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-background via-surface to-background-secondary rounded-2xl p-8 mb-12">
+    <div className="bg-surface rounded-2xl p-8 mb-12">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gradient mb-4">
           Development Philosophy

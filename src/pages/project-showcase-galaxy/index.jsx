@@ -420,16 +420,16 @@ def optimize_supply_chain(demand_forecast, inventory_levels):
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Project Showcase Galaxy - Jaimish S. Lakhani Portfolio</title>
-        <meta name="description" content="Explore my comprehensive project portfolio featuring web applications, mobile apps, and innovative solutions across various technologies." />
-        <meta name="keywords" content="projects, web development, mobile apps, portfolio, React, Node.js, full-stack" />
-      </Helmet>
-      
-      <Header />
+        <Helmet>
+          <title>Project Showcase Galaxy - Jaimish S. Lakhani Portfolio</title>
+          <meta name="description" content="Explore my comprehensive project portfolio featuring web applications, mobile apps, and innovative solutions across various technologies." />
+          <meta name="keywords" content="projects, web development, mobile apps, portfolio, React, Node.js, full-stack" />
+        </Helmet>
+        
+        <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-background via-surface to-background-secondary">
+      <section className="pt-24 pb-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-3 mb-6">
@@ -548,7 +548,7 @@ def optimize_supply_chain(demand_forecast, inventory_levels):
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-accent to-brand-secondary">
+      <section className="py-16 bg-brand-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Start Your Next Project?

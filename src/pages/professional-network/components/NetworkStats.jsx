@@ -40,7 +40,7 @@ const NetworkStats = () => {
           key={index}
           className="bg-surface border border-surface-secondary rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 group"
         >
-          <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-${stat.color} to-${stat.color}-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+          <div className={`w-16 h-16 mx-auto mb-4 bg-${stat.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
             <Icon name={stat.icon} size={28} color="white" />
           </div>
           <div className="text-3xl font-bold text-text-primary mb-2">

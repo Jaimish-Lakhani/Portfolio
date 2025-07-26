@@ -162,7 +162,7 @@ const PartnershipPhilosophy = () => {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
                         {relationship.client.split(' ').map(word => word[0]).join('')}
                       </div>
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-conversion-accent rounded-full flex items-center justify-center">
@@ -219,10 +219,10 @@ const PartnershipPhilosophy = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="card p-8 lg:p-12 bg-gradient-to-br from-accent/5 to-brand-primary/5">
+          <div className="card p-8 lg:p-12 bg-surface">
             <div className="space-y-6">
               <div className="flex justify-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center">
                   <Icon name="Handshake" size={32} color="white" />
                 </div>
               </div>

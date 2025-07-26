@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import CodeBlock from '../../../components/ui/CodeBlock';
+import BlurText from '../../../components/ui/BlurText';
 import { useTheme } from 'contexts/ThemeContext';
 
 const InteractiveCodeHero = () => {
@@ -11,6 +13,10 @@ const InteractiveCodeHero = () => {
   const [editableCode, setEditableCode] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const { theme, isDark, toggleTheme } = useTheme();
+
+  const handleAnimationComplete = () => {
+    console.log('Slogan animation completed!');
+  };
 
   const codeDemos = [
     {
@@ -230,88 +236,68 @@ console.log("10 × 5 =", calculator.multiply(10, 5));`,
       </div>
 
       {/* Hero Section 1: Profile and Crafting Digital Experiences Side by Side */}
-      <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-background to-accent-50 flex items-center justify-center overflow-hidden">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            {/* Left Side - Profile Section */}
-            <div className="flex flex-col items-center text-center space-y-8">
-              <div className="relative">
-                {/* Profile Picture Container - Rounded Rectangle */}
-                <div className="relative w-64 h-80 lg:w-80 lg:h-[420px] profile-container rounded-rect">
-                  {/* Background Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
-                  
-                  {/* Main Profile Container - Slimmer Border */}
-                  <div className="relative w-full h-full bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-1 shadow-2xl">
-                    <div className="w-full h-full bg-background rounded-xl p-1">
-                      <img
-                        src="/assets/images/profile-picture.png"
-                        alt="Jaimish S. Lakhani - Professional Profile"
-                        className="w-full h-full object-cover rounded-lg profile-picture"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* Status Indicator */}
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-violet-500 rounded-full border-3 border-background flex items-center justify-center shadow-lg">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                  </div>
-                </div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -top-3 -right-3 w-6 h-6 bg-violet-500 rounded-full animate-bounce opacity-60"></div>
-                <div className="absolute -bottom-3 -left-3 w-5 h-5 bg-purple-600 rounded-full animate-pulse opacity-40"></div>
-              </div>
-              
-              {/* Profile Details */}
-              <div className="space-y-6">
-                <div className="flex items-center justify-center space-x-2 mb-3">
-                  <span className="text-4xl lg:text-5xl font-bold text-text-primary">Jaimish S. Lakhani</span>
-                  <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></div>
-                </div>
-                <p className="text-text-secondary font-medium text-xl mb-4">Full-Stack Developer & Technical Innovator</p>
-                <div className="flex items-center justify-center space-x-2">
-                  <Icon name="MapPin" size={16} className="text-violet-500" />
-                  <span className="text-text-secondary">Available for Projects</span>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border max-w-md mx-auto">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-text-primary">50+</div>
-                  <div className="text-sm text-text-secondary">Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-text-primary">5+</div>
-                  <div className="text-sm text-text-secondary">Years</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-text-primary">99%</div>
-                  <div className="text-sm text-text-secondary">Client Satisfaction</div>
-                </div>
-              </div>
+      <section className="relative min-h-screen bg-background flex items-center justify-center overflow-hidden">        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+            {/* Left Side - Space for draggable card (now global) */}
+            <div className="relative flex flex-col items-center justify-center min-h-[70vh]">
+              {/* Draggable card is now rendered globally at App level */}
             </div>
 
             {/* Right Side - Crafting Digital Experiences */}
-            <div className="flex flex-col justify-center space-y-8">
-              <div className="inline-flex items-center space-x-2 bg-violet-50 text-violet-700 px-4 py-2 rounded-full text-sm font-medium">
+            <motion.div 
+              className="flex flex-col justify-center space-y-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div 
+                className="inline-flex items-center space-x-2 bg-violet-50 text-violet-700 px-4 py-2 rounded-full text-sm font-medium"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              >
                 <Icon name="Code2" size={16} />
                 <span>Live Code Demonstration</span>
+              </motion.div>
+              
+              <div className="space-y-4">
+                                <div className="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-left">
+                  <BlurText
+                    text="Crafting Next-Gen Innovation & Technology"
+                    delay={50}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-violet-600 dark:text-violet-400"
+                    stepDuration={0.05}
+                    style={{
+                      background: 'linear-gradient(90deg, #8b5cf6 0%, #a855f7 25%, #7c3aed 50%, #6d28d9 75%, #5b21b6 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      backgroundSize: '100% 100%'
+                    }}
+                  />
+                </div>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-text-primary leading-tight">
-                Crafting Digital
-                <span className="text-gradient block">Experiences</span>
-              </h1>
-              
-              <p className="text-xl text-text-secondary leading-relaxed">
+              <motion.p 
+                className="text-xl text-text-secondary leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 3.5, ease: "easeOut" }}
+              >
                 Full-stack developer specializing in React, Node.js, and cloud architecture. 
                 Watch my code come to life with interactive demonstrations and see how I build 
                 scalable, maintainable applications that solve real-world problems.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-wrap gap-4">
+              <motion.div 
+                className="flex flex-wrap gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 4, ease: "easeOut" }}
+              >
                 <Button
                   variant="outline"
                   size="lg"
@@ -320,19 +306,31 @@ console.log("10 × 5 =", calculator.multiply(10, 5));`,
                 >
                   View on GitHub
                 </Button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <motion.div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.6, 
+            delay: 4.5, 
+            ease: "easeOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+            repeatDelay: 1
+          }}
+        >
           <Icon name="ChevronDown" size={24} className="text-text-secondary" />
-        </div>
+        </motion.div>
       </section>
 
       {/* Hero Section 2: Interactive Code Editor */}
-      <section className="relative min-h-screen bg-gradient-to-br from-accent-50 via-background to-primary-50 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen bg-background flex items-center justify-center overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-4">
@@ -399,15 +397,17 @@ console.log("10 × 5 =", calculator.multiply(10, 5));`,
                     <textarea
                       value={editableCode}
                       onChange={handleCodeChange}
-                      className="w-full h-96 p-4 font-mono text-sm bg-slate-800 text-slate-50 border-0 resize-none focus:outline-none focus:ring-0"
+                      className="w-full h-96 p-4 font-mono text-sm bg-black text-slate-50 border-0 resize-none focus:outline-none focus:ring-0 scrollbar-dark"
                       placeholder="Write your JavaScript code here..."
                       spellCheck="false"
                       style={{
-                        backgroundColor: theme === 'dark' ? '#0f172a' : '#1e293b',
+                        backgroundColor: '#000000',
                         color: theme === 'dark' ? '#f8fafc' : '#f1f5f9',
                         tabSize: 2,
                         fontFamily: 'JetBrains Mono, Consolas, Monaco, monospace',
-                        lineHeight: '1.5'
+                        lineHeight: '1.5',
+                        scrollbarWidth: 'thin',
+                        scrollbarColor: '#374151 #000000'
                       }}
                       onKeyDown={(e) => {
                         // Handle Tab key for indentation

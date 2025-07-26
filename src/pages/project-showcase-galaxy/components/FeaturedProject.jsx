@@ -5,7 +5,7 @@ import Button from '../../../components/ui/Button';
 
 const FeaturedProject = ({ project, onViewDetails, onViewDemo }) => {
   return (
-    <div className="bg-gradient-to-br from-accent-50 to-brand-secondary/10 border border-accent-200 rounded-2xl overflow-hidden mb-12">
+    <div className="bg-surface border border-surface-secondary rounded-2xl overflow-hidden mb-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
         {/* Content Side */}
         <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -94,7 +94,7 @@ const FeaturedProject = ({ project, onViewDetails, onViewDemo }) => {
           />
           
           {/* Overlay with Quick Stats */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-primary/80" />
           
           <div className="absolute bottom-6 left-6 right-6">
             <div className="grid grid-cols-3 gap-4">

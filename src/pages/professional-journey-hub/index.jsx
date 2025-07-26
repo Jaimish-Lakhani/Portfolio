@@ -222,14 +222,14 @@ const ProfessionalJourneyHub = () => {
   };
 
   return (
-    <div className="min-h-screen bg-hero-gradient">
-      <Helmet>
-        <title>Professional Journey Hub - Jaimish S. Lakhani Portfolio</title>
-        <meta name="description" content="Explore my professional development journey, career milestones, technical growth, and working philosophy through an interactive timeline visualization." />
-        <meta name="keywords" content="professional journey, career timeline, technical growth, developer experience, mentorship, leadership" />
-      </Helmet>
+    <div className="min-h-screen bg-background">
+        <Helmet>
+          <title>Professional Journey Hub - Jaimish S. Lakhani Portfolio</title>
+          <meta name="description" content="Explore my professional development journey, career milestones, technical growth, and working philosophy through an interactive timeline visualization." />
+          <meta name="keywords" content="professional journey, career timeline, technical growth, developer experience, mentorship, leadership" />
+        </Helmet>
 
-      <Header />
+        <Header />
 
       <main className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -271,7 +271,7 @@ const ProfessionalJourneyHub = () => {
           <GrowthMetrics />
 
           {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-accent to-brand-secondary rounded-2xl p-8 text-white">
+          <div className="text-center bg-brand-primary rounded-2xl p-8 text-white">
             <h2 className="text-2xl font-bold mb-4">
               Ready to Collaborate?
             </h2>

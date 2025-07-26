@@ -19,7 +19,7 @@ const ProblemSolvingScenario = ({ scenario }) => {
 
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl overflow-hidden">
-      <div className="bg-gradient-to-r from-error-600 to-warning-600 text-white px-6 py-4">
+      <div className="bg-error-600 text-white px-6 py-4">
         <div className="flex items-center space-x-3">
           <Icon name="AlertTriangle" size={24} />
           <div>
@@ -117,7 +117,7 @@ const ProblemSolvingScenario = ({ scenario }) => {
               {/* Active Step Content */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-accent-500 to-brand-secondary rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
                     <Icon name={scenario.steps[activeStep].icon} size={20} color="white" />
                   </div>
                   <div>

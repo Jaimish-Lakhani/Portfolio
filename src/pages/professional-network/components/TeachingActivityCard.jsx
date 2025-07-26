@@ -7,7 +7,7 @@ const TeachingActivityCard = ({ activity }) => {
     <div className="bg-surface border border-surface-secondary rounded-xl p-6 hover:shadow-lg transition-all duration-300">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-success to-success-600 rounded-lg flex items-center justify-center">
+          <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center">
             <Icon name={activity.icon} size={24} color="white" />
           </div>
           <div>

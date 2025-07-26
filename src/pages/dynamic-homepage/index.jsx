@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
+import DraggableProfileCard from './components/DraggableProfileCard';
 import InteractiveCodeHero from './components/InteractiveCodeHero';
 import ProjectShowcase from './components/ProjectShowcase';
 import SkillsVisualization from './components/SkillsVisualization';
@@ -10,12 +11,17 @@ import AvailabilityStatus from './components/AvailabilityStatus';
 
 const DynamicHomepage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <Helmet>
         <title>Jaimish S. Lakhani - Full Stack Developer & Technical Innovator</title>
         <meta name="description" content="Welcome to Jaimish S. Lakhani's portfolio - Full-stack developer passionate about creating innovative solutions with modern web technologies." />
         <meta name="keywords" content="Jaimish Lakhani, full-stack developer, React, Node.js, web development, JavaScript, portfolio" />
       </Helmet>
+      
+      {/* Draggable Profile Card - only on homepage */}
+      <div className="absolute inset-0 pointer-events-none z-40">
+        <DraggableProfileCard />
+      </div>
       
       <Header />
       
@@ -43,7 +49,7 @@ const DynamicHomepage = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-accent to-brand-secondary rounded-full p-0.5 shadow-md profile-container">
+                <div className="w-10 h-10 bg-brand-primary rounded-full p-0.5 shadow-md profile-container">
                   <img
                     src="/assets/images/profile-picture.png"
                     alt="Jaimish S. Lakhani"
@@ -52,7 +58,7 @@ const DynamicHomepage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">Jaimish S. Lakhani Portfolio</h3>
-                  <p className="text-text-secondary text-sm">Crafting Digital Experiences</p>
+                  <p className="text-text-secondary text-sm">Crafting Next-Gen Innovation & Technology</p>
                 </div>
               </div>
               <p className="text-text-secondary mb-4 max-w-md">

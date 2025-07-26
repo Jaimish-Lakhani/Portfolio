@@ -1,43 +1,43 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Theme configuration
+// Theme configuration - Pure Black Background with Purple Accents
 const THEMES = {
   light: {
     name: 'light',
     displayName: 'Light Mode',
     colors: {
-      primary: '#1E293B',
-      'primary-50': '#F8FAFC',
-      'primary-100': '#F1F5F9',
-      'primary-200': '#E2E8F0',
-      'primary-300': '#CBD5E1',
-      'primary-400': '#94A3B8',
-      'primary-500': '#64748B',
-      'primary-600': '#475569',
-      'primary-700': '#334155',
-      'primary-foreground': '#F8FAFC',
-      background: '#F8FAFC',
-      'text-primary': '#0F172A',
-      'text-secondary': '#64748B'
+      primary: '#720e9e', // Purple accent color
+      'primary-50': '#E6E6FA', // Lavender for light elements
+      'primary-100': '#E6E6FA',
+      'primary-200': '#E6E6FA',
+      'primary-300': '#E6E6FA',
+      'primary-400': '#720e9e',
+      'primary-500': '#720e9e',
+      'primary-600': '#720e9e',
+      'primary-700': '#720e9e',
+      'primary-foreground': '#FFFFFF', // White text
+      background: '#000000', // Pure black background
+      'text-primary': '#FFFFFF', // White text
+      'text-secondary': '#E6E6FA' // Light lavender for secondary text
     }
   },
   dark: {
     name: 'dark',
     displayName: 'Dark Mode',
     colors: {
-      primary: '#F8FAFC',
-      'primary-50': '#1E293B',
-      'primary-100': '#334155',
-      'primary-200': '#475569',
-      'primary-300': '#64748B',
-      'primary-400': '#94A3B8',
-      'primary-500': '#CBD5E1',
-      'primary-600': '#E2E8F0',
-      'primary-700': '#F1F5F9',
-      'primary-foreground': '#1E293B',
-      background: '#0F172A',
-      'text-primary': '#F8FAFC',
-      'text-secondary': '#CBD5E1'
+      primary: '#720e9e', // Purple accent color
+      'primary-50': '#E6E6FA', // Lavender for light elements
+      'primary-100': '#E6E6FA',
+      'primary-200': '#E6E6FA',
+      'primary-300': '#E6E6FA',
+      'primary-400': '#720e9e',
+      'primary-500': '#720e9e',
+      'primary-600': '#720e9e',
+      'primary-700': '#720e9e',
+      'primary-foreground': '#FFFFFF', // White text
+      background: '#000000', // Pure black background
+      'text-primary': '#FFFFFF', // White text
+      'text-secondary': '#E6E6FA' // Light lavender for secondary text
     }
   }
 };

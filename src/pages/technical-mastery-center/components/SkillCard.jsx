@@ -25,7 +25,7 @@ const SkillCard = ({ skill, index }) => {
     <div className="group bg-surface border border-surface-secondary rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-brand-secondary rounded-lg flex items-center justify-center shadow-md">
+          <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center shadow-md">
             <Icon name={skill.icon} size={24} color="white" />
           </div>
           <div>
@@ -51,7 +51,7 @@ const SkillCard = ({ skill, index }) => {
         
         <div className="w-full bg-surface-secondary rounded-full h-2">
           <div 
-            className="bg-gradient-to-r from-accent-500 to-brand-secondary h-2 rounded-full transition-all duration-500"
+            className="bg-brand-primary h-2 rounded-full transition-all duration-500"
             style={{ width: `${skill.proficiencyLevel}%` }}
           ></div>
         </div>

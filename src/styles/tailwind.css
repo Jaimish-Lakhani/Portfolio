@@ -6,111 +6,111 @@
 
 @layer base {
   :root {
-    /* Primary Colors */
-    --color-primary: #1E293B; /* slate-800 */
-    --color-primary-50: #F8FAFC; /* slate-50 */
-    --color-primary-100: #F1F5F9; /* slate-100 */
-    --color-primary-200: #E2E8F0; /* slate-200 */
-    --color-primary-300: #CBD5E1; /* slate-300 */
-    --color-primary-400: #94A3B8; /* slate-400 */
-    --color-primary-500: #64748B; /* slate-500 */
-    --color-primary-600: #475569; /* slate-600 */
-    --color-primary-700: #334155; /* slate-700 */
-    --color-primary-foreground: #F8FAFC; /* slate-50 */
+    /* Purple Theme - Primary Colors */
+    --color-primary: #720e9e; /* Purple accent */
+    --color-primary-50: #E6E6FA; /* Lavender */
+    --color-primary-100: #E6E6FA; /* Lavender */
+    --color-primary-200: #E6E6FA; /* Lavender */
+    --color-primary-300: #E6E6FA; /* Lavender */
+    --color-primary-400: #720e9e; /* Purple accent */
+    --color-primary-500: #720e9e; /* Purple accent */
+    --color-primary-600: #720e9e; /* Purple accent */
+    --color-primary-700: #720e9e; /* Purple accent */
+    --color-primary-foreground: #FFFFFF; /* White text */
 
-    /* Secondary Colors */
-    --color-secondary: #475569; /* slate-600 */
-    --color-secondary-50: #F8FAFC; /* slate-50 */
-    --color-secondary-100: #F1F5F9; /* slate-100 */
-    --color-secondary-200: #E2E8F0; /* slate-200 */
-    --color-secondary-300: #CBD5E1; /* slate-300 */
-    --color-secondary-400: #94A3B8; /* slate-400 */
-    --color-secondary-500: #64748B; /* slate-500 */
-    --color-secondary-600: #475569; /* slate-600 */
-    --color-secondary-700: #334155; /* slate-700 */
-    --color-secondary-800: #1E293B; /* slate-800 */
-    --color-secondary-foreground: #F8FAFC; /* slate-50 */
+    /* Secondary Colors - Simple Purple and White */
+    --color-secondary: #720e9e; /* Purple accent */
+    --color-secondary-50: #E6E6FA; /* Lavender */
+    --color-secondary-100: #E6E6FA; /* Lavender */
+    --color-secondary-200: #E6E6FA; /* Lavender */
+    --color-secondary-300: #E6E6FA; /* Lavender */
+    --color-secondary-400: #720e9e; /* Purple accent */
+    --color-secondary-500: #720e9e; /* Purple accent */
+    --color-secondary-600: #720e9e; /* Purple accent */
+    --color-secondary-700: #720e9e; /* Purple accent */
+    --color-secondary-800: #720e9e; /* Purple accent */
+    --color-secondary-foreground: #FFFFFF; /* White text */
 
-    /* Accent Colors */
-    --color-accent: #8B5CF6; /* violet-500 */
-    --color-accent-50: #F5F3FF; /* violet-50 */
-    --color-accent-100: #EDE9FE; /* violet-100 */
-    --color-accent-200: #DDD6FE; /* violet-200 */
-    --color-accent-300: #C4B5FD; /* violet-300 */
-    --color-accent-400: #A78BFA; /* violet-400 */
-    --color-accent-500: #8B5CF6; /* violet-500 */
-    --color-accent-600: #7C3AED; /* violet-600 */
-    --color-accent-700: #6D28D9; /* violet-700 */
-    --color-accent-800: #5B21B6; /* violet-800 */
-    --color-accent-900: #4C1D95; /* violet-900 */
-    --color-accent-foreground: #FFFFFF; /* white */
+    /* Accent Colors - Purple */
+    --color-accent: #720e9e; /* Purple accent */
+    --color-accent-50: #E6E6FA; /* Lavender */
+    --color-accent-100: #E6E6FA; /* Lavender */
+    --color-accent-200: #E6E6FA; /* Lavender */
+    --color-accent-300: #E6E6FA; /* Lavender */
+    --color-accent-400: #720e9e; /* Purple accent */
+    --color-accent-500: #720e9e; /* Purple accent */
+    --color-accent-600: #720e9e; /* Purple accent */
+    --color-accent-700: #720e9e; /* Purple accent */
+    --color-accent-800: #720e9e; /* Purple accent */
+    --color-accent-900: #720e9e; /* Purple accent */
+    --color-accent-foreground: #FFFFFF; /* White text */
 
-    /* Background Colors */
-    --color-background: #F8FAFC; /* slate-50 */
-    --color-background-secondary: #F1F5F9; /* slate-100 */
-    --color-background-tertiary: #E2E8F0; /* slate-200 */
+    /* Background Colors - Pure Black */
+    --color-background: #000000; /* Pure black */
+    --color-background-secondary: #000000; /* Pure black */
+    --color-background-tertiary: #000000; /* Pure black */
 
-    /* Surface Colors */
-    --color-surface: #F1F5F9; /* slate-100 */
-    --color-surface-secondary: #E2E8F0; /* slate-200 */
-    --color-surface-tertiary: #CBD5E1; /* slate-300 */
+    /* Surface Colors - Black and Purple */
+    --color-surface: #000000; /* Pure black */
+    --color-surface-secondary: #720e9e; /* Purple accent for cards/surfaces */
+    --color-surface-tertiary: #E6E6FA; /* Lavender for highlights */
 
-    /* Text Colors */
-    --color-text-primary: #0F172A; /* slate-900 */
-    --color-text-secondary: #64748B; /* slate-500 */
-    --color-text-tertiary: #94A3B8; /* slate-400 */
-    --color-text-inverse: #F8FAFC; /* slate-50 */
+    /* Text Colors - White and Lavender */
+    --color-text-primary: #FFFFFF; /* White text */
+    --color-text-secondary: #E6E6FA; /* Lavender for secondary text */
+    --color-text-tertiary: #E6E6FA; /* Lavender for tertiary text */
+    --color-text-inverse: #000000; /* Black text for light backgrounds */
 
-    /* Status Colors */
-    --color-success: #10B981; /* emerald-500 */
-    --color-success-50: #ECFDF5; /* emerald-50 */
-    --color-success-100: #D1FAE5; /* emerald-100 */
-    --color-success-200: #A7F3D0; /* emerald-200 */
-    --color-success-300: #6EE7B7; /* emerald-300 */
-    --color-success-400: #34D399; /* emerald-400 */
-    --color-success-500: #10B981; /* emerald-500 */
-    --color-success-600: #059669; /* emerald-600 */
-    --color-success-700: #047857; /* emerald-700 */
-    --color-success-800: #065F46; /* emerald-800 */
-    --color-success-900: #064E3B; /* emerald-900 */
-    --color-success-foreground: #FFFFFF; /* white */
+    /* Status Colors - Purple theme */
+    --color-success: #720e9e; /* Purple accent */
+    --color-success-50: #E6E6FA; /* Lavender */
+    --color-success-100: #E6E6FA; /* Lavender */
+    --color-success-200: #E6E6FA; /* Lavender */
+    --color-success-300: #E6E6FA; /* Lavender */
+    --color-success-400: #720e9e; /* Purple accent */
+    --color-success-500: #720e9e; /* Purple accent */
+    --color-success-600: #720e9e; /* Purple accent */
+    --color-success-700: #720e9e; /* Purple accent */
+    --color-success-800: #720e9e; /* Purple accent */
+    --color-success-900: #720e9e; /* Purple accent */
+    --color-success-foreground: #FFFFFF; /* White text */
 
-    --color-warning: #F59E0B; /* amber-500 */
-    --color-warning-50: #FFFBEB; /* amber-50 */
-    --color-warning-100: #FEF3C7; /* amber-100 */
-    --color-warning-200: #FDE68A; /* amber-200 */
-    --color-warning-300: #FCD34D; /* amber-300 */
-    --color-warning-400: #FBBF24; /* amber-400 */
-    --color-warning-500: #F59E0B; /* amber-500 */
-    --color-warning-600: #D97706; /* amber-600 */
-    --color-warning-700: #B45309; /* amber-700 */
-    --color-warning-800: #92400E; /* amber-800 */
-    --color-warning-900: #78350F; /* amber-900 */
-    --color-warning-foreground: #FFFFFF; /* white */
+    --color-warning: #720e9e; /* Purple accent */
+    --color-warning-50: #E6E6FA; /* Lavender */
+    --color-warning-100: #E6E6FA; /* Lavender */
+    --color-warning-200: #E6E6FA; /* Lavender */
+    --color-warning-300: #E6E6FA; /* Lavender */
+    --color-warning-400: #720e9e; /* Purple accent */
+    --color-warning-500: #720e9e; /* Purple accent */
+    --color-warning-600: #720e9e; /* Purple accent */
+    --color-warning-700: #720e9e; /* Purple accent */
+    --color-warning-800: #720e9e; /* Purple accent */
+    --color-warning-900: #720e9e; /* Purple accent */
+    --color-warning-foreground: #FFFFFF; /* White text */
 
-    --color-error: #EF4444; /* red-500 */
-    --color-error-50: #FEF2F2; /* red-50 */
-    --color-error-100: #FEE2E2; /* red-100 */
-    --color-error-200: #FECACA; /* red-200 */
-    --color-error-300: #FCA5A5; /* red-300 */
-    --color-error-400: #F87171; /* red-400 */
-    --color-error-500: #EF4444; /* red-500 */
-    --color-error-600: #DC2626; /* red-600 */
-    --color-error-700: #B91C1C; /* red-700 */
-    --color-error-800: #991B1B; /* red-800 */
-    --color-error-900: #7F1D1D; /* red-900 */
-    --color-error-foreground: #FFFFFF; /* white */
+    --color-error: #720e9e; /* Purple accent */
+    --color-error-50: #E6E6FA; /* Lavender */
+    --color-error-100: #E6E6FA; /* Lavender */
+    --color-error-200: #E6E6FA; /* Lavender */
+    --color-error-300: #E6E6FA; /* Lavender */
+    --color-error-400: #720e9e; /* Purple accent */
+    --color-error-500: #720e9e; /* Purple accent */
+    --color-error-600: #720e9e; /* Purple accent */
+    --color-error-700: #720e9e; /* Purple accent */
+    --color-error-800: #720e9e; /* Purple accent */
+    --color-error-900: #720e9e; /* Purple accent */
+    --color-error-foreground: #FFFFFF; /* White text */
 
-    /* Border Colors */
-    --color-border: #E2E8F0; /* slate-200 */
-    --color-border-secondary: #CBD5E1; /* slate-300 */
+    /* Border Colors - Purple */
+    --color-border: #720e9e; /* Purple accent */
+    --color-border-secondary: #E6E6FA; /* Lavender */
 
-    /* Brand Colors */
-    --color-brand-primary: #7C3AED; /* violet-600 */
-    --color-brand-secondary: #A855F7; /* purple-500 */
-    --color-conversion-accent: #8B5CF6; /* violet-500 */
-    --color-trust-builder: #A855F7; /* purple-500 */
-    --color-cta: #DC2626; /* red-600 */
+    /* Brand Colors - Purple theme */
+    --color-brand-primary: #720e9e; /* Purple accent */
+    --color-brand-secondary: #E6E6FA; /* Lavender */
+    --color-conversion-accent: #720e9e; /* Purple accent */
+    --color-trust-builder: #720e9e; /* Purple accent */
+    --color-cta: #720e9e; /* Purple accent */
 
     /* Spacing Scale */
     --spacing-xs: 0.5rem; /* 8px */
@@ -141,44 +141,44 @@
     --transition-slow: 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
-  /* Dark Theme Variables */
+  /* Dark Theme Variables - Same as Light Theme (Pure Black with Purple) */
   .theme-dark, .dark {
-    /* Dark Theme - Primary Colors */
-    --color-primary: #F8FAFC; /* slate-50 */
-    --color-primary-50: #1E293B; /* slate-800 */
-    --color-primary-100: #334155; /* slate-700 */
-    --color-primary-200: #475569; /* slate-600 */
-    --color-primary-300: #64748B; /* slate-500 */
-    --color-primary-400: #94A3B8; /* slate-400 */
-    --color-primary-500: #CBD5E1; /* slate-300 */
-    --color-primary-600: #E2E8F0; /* slate-200 */
-    --color-primary-700: #F1F5F9; /* slate-100 */
-    --color-primary-foreground: #1E293B; /* slate-800 */
+    /* Dark Theme - Primary Colors (identical to light theme) */
+    --color-primary: #720e9e; /* Purple accent */
+    --color-primary-50: #E6E6FA; /* Lavender */
+    --color-primary-100: #E6E6FA; /* Lavender */
+    --color-primary-200: #E6E6FA; /* Lavender */
+    --color-primary-300: #E6E6FA; /* Lavender */
+    --color-primary-400: #720e9e; /* Purple accent */
+    --color-primary-500: #720e9e; /* Purple accent */
+    --color-primary-600: #720e9e; /* Purple accent */
+    --color-primary-700: #720e9e; /* Purple accent */
+    --color-primary-foreground: #FFFFFF; /* White text */
     
-    /* Dark Theme - Background Colors */
-    --color-background: #0F172A; /* slate-900 */
-    --color-background-secondary: #1E293B; /* slate-800 */
-    --color-background-tertiary: #334155; /* slate-700 */
+    /* Dark Theme - Background Colors (Pure Black) */
+    --color-background: #000000; /* Pure black */
+    --color-background-secondary: #000000; /* Pure black */
+    --color-background-tertiary: #000000; /* Pure black */
     
-    /* Dark Theme - Surface Colors */
-    --color-surface: #1E293B; /* slate-800 */
-    --color-surface-secondary: #334155; /* slate-700 */
-    --color-surface-tertiary: #475569; /* slate-600 */
+    /* Dark Theme - Surface Colors (Black and Purple) */
+    --color-surface: #000000; /* Pure black */
+    --color-surface-secondary: #720e9e; /* Purple accent for cards/surfaces */
+    --color-surface-tertiary: #E6E6FA; /* Lavender for highlights */
     
-    /* Dark Theme - Text Colors */
-    --color-text-primary: #F8FAFC; /* slate-50 */
-    --color-text-secondary: #CBD5E1; /* slate-300 */
-    --color-text-tertiary: #94A3B8; /* slate-400 */
-    --color-text-inverse: #0F172A; /* slate-900 */
+    /* Dark Theme - Text Colors (White and Lavender) */
+    --color-text-primary: #FFFFFF; /* White text */
+    --color-text-secondary: #E6E6FA; /* Lavender for secondary text */
+    --color-text-tertiary: #E6E6FA; /* Lavender for tertiary text */
+    --color-text-inverse: #000000; /* Black text for light backgrounds */
     
-    /* Dark Theme - Accent Colors */
-    --color-accent-50: #1E293B; /* darker background for active states */
-    --color-accent-100: #334155; /* slate-700 */
-    --color-accent-200: #475569; /* slate-600 */
+    /* Dark Theme - Accent Colors (Purple) */
+    --color-accent-50: #E6E6FA; /* Lavender for active states */
+    --color-accent-100: #E6E6FA; /* Lavender */
+    --color-accent-200: #720e9e; /* Purple accent */
     
-    /* Dark Theme - Border Colors */
-    --color-border: #475569; /* slate-600 */
-    --color-border-secondary: #64748B; /* slate-500 */
+    /* Dark Theme - Border Colors (Purple) */
+    --color-border: #720e9e; /* Purple accent */
+    --color-border-secondary: #E6E6FA; /* Lavender */
   }
 
   * {
@@ -224,11 +224,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent;
+    @apply text-brand-primary;
   }
 
   .hero-gradient {
-    @apply bg-gradient-to-br from-background via-surface to-background-secondary;
+    @apply bg-background;
   }
 
   .interactive-hover {
@@ -385,13 +385,11 @@
   }
 
   .gradient-border {
-    @apply relative;
+    @apply relative border border-surface-secondary;
   }
 
   .gradient-border::before {
     content: '';
-    @apply absolute inset-0 rounded-lg p-px bg-gradient-to-r from-brand-primary to-brand-secondary;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    @apply absolute inset-0 rounded-lg p-px border border-surface-secondary;
   }
 }

@@ -409,15 +409,15 @@ const ProfessionalNetwork = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Professional Network - Jaimish S. Lakhani Portfolio</title>
-        <meta name="description" content="Explore my professional network, speaking engagements, community involvement, and contributions to the developer ecosystem." />
-      </Helmet>
+        <Helmet>
+          <title>Professional Network - Jaimish S. Lakhani Portfolio</title>
+          <meta name="description" content="Explore my professional network, speaking engagements, community involvement, and contributions to the developer ecosystem." />
+        </Helmet>
 
-      <Header />
+        <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-background via-surface to-background-secondary">
+      <section className="pt-24 pb-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -489,7 +489,7 @@ const ProfessionalNetwork = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-accent to-accent-600">
+      <section className="py-16 bg-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Let's Connect and Collaborate
@@ -527,7 +527,7 @@ const ProfessionalNetwork = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-accent to-accent-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
                   <Icon name="Code2" size={20} color="white" />
                 </div>
                 <div>

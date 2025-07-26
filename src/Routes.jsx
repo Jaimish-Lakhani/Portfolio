@@ -15,18 +15,17 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
-        {/* Define your routes here */}
-        <Route path="/" element={<DynamicHomepage />} />
-        <Route path="/dynamic-homepage" element={<DynamicHomepage />} />
-        <Route path="/professional-network" element={<ProfessionalNetwork />} />
-        <Route path="/project-showcase-galaxy" element={<ProjectShowcaseGalaxy />} />
-        <Route path="/professional-journey-hub" element={<ProfessionalJourneyHub />} />
-        <Route path="/collaboration-studio" element={<CollaborationStudio />} />
-        <Route path="/technical-mastery-center" element={<TechnicalMasteryCenter />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
+        <ScrollToTop />
+        <RouterRoutes>
+          {/* Define your routes here */}
+          <Route path="/" element={<DynamicHomepage />} />
+          <Route path="/dynamic-homepage" element={<DynamicHomepage />} />
+          <Route path="/professional-network" element={<ProfessionalNetwork />} />
+          <Route path="/project-showcase-galaxy" element={<ProjectShowcaseGalaxy />} />
+          <Route path="/professional-journey-hub" element={<ProfessionalJourneyHub />} />
+          <Route path="/collaboration-studio" element={<CollaborationStudio />} />
+          <Route path="/technical-mastery-center" element={<TechnicalMasteryCenter />} />
+        </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>
   );

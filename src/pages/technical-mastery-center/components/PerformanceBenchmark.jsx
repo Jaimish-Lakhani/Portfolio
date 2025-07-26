@@ -51,7 +51,7 @@ const PerformanceBenchmark = ({ benchmark }) => {
 
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl overflow-hidden">
-      <div className="bg-gradient-to-r from-success-600 to-accent-600 text-white px-6 py-4">
+      <div className="bg-success-600 text-white px-6 py-4">
         <div className="flex items-center space-x-3">
           <Icon name="Zap" size={24} />
           <div>

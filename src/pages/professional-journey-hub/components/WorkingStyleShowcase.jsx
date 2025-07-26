@@ -228,7 +228,7 @@ const WorkingStyleShowcase = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="bg-gradient-to-r from-surface to-surface-secondary rounded-xl p-8">
+      <div className="bg-surface rounded-xl p-8">
         <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
           What Colleagues Say
         </h3>

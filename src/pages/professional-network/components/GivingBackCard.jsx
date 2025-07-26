@@ -6,7 +6,7 @@ const GivingBackCard = ({ initiative }) => {
   return (
     <div className="bg-surface border border-surface-secondary rounded-xl p-6 hover:shadow-lg transition-all duration-300">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-conversion-accent to-success-600 rounded-lg flex items-center justify-center">
+        <div className="w-12 h-12 bg-conversion-accent rounded-lg flex items-center justify-center">
           <Icon name={initiative.icon} size={24} color="white" />
         </div>
         <div className="flex-1">

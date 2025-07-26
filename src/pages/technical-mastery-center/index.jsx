@@ -495,20 +495,20 @@ const TechnicalMasteryCenter = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Technical Mastery Center - Jaimish S. Lakhani Portfolio</title>
-        <meta name="description" content="Explore technical expertise through interactive code examples, architectural decisions, and real-world problem-solving approaches." />
-        <meta name="keywords" content="technical skills, programming, web development, code quality, architecture, performance" />
-      </Helmet>
-      
-      <Header />
+        <Helmet>
+          <title>Technical Mastery Center - Jaimish S. Lakhani Portfolio</title>
+          <meta name="description" content="Explore technical expertise through interactive code examples, architectural decisions, and real-world problem-solving approaches." />
+          <meta name="keywords" content="technical skills, programming, web development, code quality, architecture, performance" />
+        </Helmet>
+        
+        <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-background via-surface to-background-secondary">
+      <section className="pt-20 pb-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg">
                 <Icon name="Code2" size={32} color="white" />
               </div>
               <div className="text-left">
@@ -698,7 +698,7 @@ const TechnicalMasteryCenter = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary">
+      <section className="py-16 bg-brand-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -734,7 +734,7 @@ const TechnicalMasteryCenter = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-accent-500 to-brand-secondary rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
                   <Icon name="Code2" size={20} color="white" />
                 </div>
                 <div>
