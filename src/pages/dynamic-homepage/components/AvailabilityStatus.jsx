@@ -17,7 +17,7 @@ const AvailabilityStatus = () => {
     nextOpenSlot: "March 15, 2024",
     currentProjects: 2,
     maxProjects: 4,
-    preferredProjectTypes: ["Full-Stack Development", "React Applications", "API Development"],
+    preferredProjectTypes: ["Backend Development", "Microservices Architecture", "API Development", "Cloud Infrastructure"],
     minimumBudget: "$5,000",
     estimatedStartDate: "Within 2 weeks"
   };

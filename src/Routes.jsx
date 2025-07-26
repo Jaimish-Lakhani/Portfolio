@@ -4,9 +4,7 @@ import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
 // Add your imports here
 import DynamicHomepage from "pages/dynamic-homepage";
-import ProfessionalNetwork from "pages/professional-network";
 import ProjectShowcaseGalaxy from "pages/project-showcase-galaxy";
-import ProfessionalJourneyHub from "pages/professional-journey-hub";
 import CollaborationStudio from "pages/collaboration-studio";
 import TechnicalMasteryCenter from "pages/technical-mastery-center";
 import NotFound from "pages/NotFound";
@@ -20,11 +18,10 @@ const Routes = () => {
           {/* Define your routes here */}
           <Route path="/" element={<DynamicHomepage />} />
           <Route path="/dynamic-homepage" element={<DynamicHomepage />} />
-          <Route path="/professional-network" element={<ProfessionalNetwork />} />
           <Route path="/project-showcase-galaxy" element={<ProjectShowcaseGalaxy />} />
-          <Route path="/professional-journey-hub" element={<ProfessionalJourneyHub />} />
           <Route path="/collaboration-studio" element={<CollaborationStudio />} />
           <Route path="/technical-mastery-center" element={<TechnicalMasteryCenter />} />
+          <Route path="*" element={<NotFound />} />
         </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>

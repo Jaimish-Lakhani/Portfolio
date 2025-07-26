@@ -287,9 +287,9 @@ console.log("10 × 5 =", calculator.multiply(10, 5));`,
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 3.5, ease: "easeOut" }}
               >
-                Full-stack developer specializing in React, Node.js, and cloud architecture. 
+                Backend engineer specializing in Node.js, microservices, MongoDB, and AWS cloud architecture. 
                 Watch my code come to life with interactive demonstrations and see how I build 
-                scalable, maintainable applications that solve real-world problems.
+                scalable, distributed systems that handle millions of requests efficiently.
               </motion.p>
 
               <motion.div 

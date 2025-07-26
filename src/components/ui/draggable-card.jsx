@@ -51,8 +51,10 @@ export const DraggableCardBody = ({
         // Update constraints for full document dragging with absolute positioning
         const updateConstraints = () => {
             if (typeof window !== "undefined") {
-                const cardWidth = 480; // Card width
-                const cardHeight = 720; // Card height
+                // Responsive card dimensions
+                const isMobile = window.innerWidth < 768;
+                const cardWidth = isMobile ? 320 : 480; // Smaller on mobile
+                const cardHeight = isMobile ? 480 : 720; // Smaller on mobile
                 
                 // Get the full document height for vertical movement
                 const documentHeight = Math.max(
@@ -63,12 +65,22 @@ export const DraggableCardBody = ({
                     document.documentElement.offsetHeight
                 );
 
-                setConstraints({
-                    top: 80, // Below header (header is ~80px high)
-                    left: -cardWidth * 0.8, // Allow 80% of card to go outside left border
-                    right: window.innerWidth - (cardWidth * 0.2), // Allow 80% of card to go outside right border
-                    bottom: documentHeight - cardHeight, // Can drag to the very end of the document
-                });
+                // Mobile-specific constraints for better touch scrolling
+                if (isMobile) {
+                    setConstraints({
+                        top: 60, // Slightly smaller top margin for mobile
+                        left: -cardWidth * 0.6, // Less aggressive hiding on mobile
+                        right: window.innerWidth - (cardWidth * 0.4), // Keep more visible for easier dragging
+                        bottom: documentHeight - cardHeight,
+                    });
+                } else {
+                    setConstraints({
+                        top: 80, // Below header (header is ~80px high)
+                        left: -cardWidth * 0.8, // Allow 80% of card to go outside left border
+                        right: window.innerWidth - (cardWidth * 0.2), // Allow 80% of card to go outside right border
+                        bottom: documentHeight - cardHeight, // Can drag to the very end of the document
+                    });
+                }
             }
         };
 
@@ -193,10 +205,16 @@ export const DraggableCardBody = ({
             onDragStart={() => {
                 document.body.style.cursor = "grabbing";
                 setIsDragging(true);
+                // Prevent page scrolling when dragging on mobile
+                document.body.style.overflow = 'hidden';
+                document.body.style.touchAction = 'none';
             }}
             onDragEnd={(event, info) => {
                 document.body.style.cursor = "default";
                 setIsDragging(false);
+                // Re-enable page scrolling
+                document.body.style.overflow = '';
+                document.body.style.touchAction = '';
 
                 // Remove rotation reset since we disabled 3D effects
                 // Keep momentum animation for smooth feel
@@ -236,12 +254,18 @@ export const DraggableCardBody = ({
                 willChange: "transform",
                 position: "absolute", // Absolute positioning so it moves with page content
                 zIndex: isDragging ? 45 : 40, // Below header (z-50) but above content
+                // Improve touch performance on mobile
+                touchAction: 'none',
             }}
             data-draggable-card="true"
             animate={controls}
             whileDrag={{ zIndex: 45 }}
             className={cn(
-                "relative w-[480px] h-[720px] overflow-hidden rounded-2xl bg-background shadow-2xl cursor-grab active:cursor-grabbing border border-purple-600 select-none",
+                "relative overflow-hidden rounded-2xl bg-background shadow-2xl cursor-grab active:cursor-grabbing border border-purple-600 select-none",
+                // Responsive dimensions
+                "w-[320px] h-[480px] md:w-[480px] md:h-[720px]",
+                // Touch-friendly on mobile
+                "touch-manipulation",
                 className,
             )}
         >

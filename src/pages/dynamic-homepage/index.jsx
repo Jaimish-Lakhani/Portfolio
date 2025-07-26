@@ -14,9 +14,33 @@ const DynamicHomepage = () => {
     <div className="min-h-screen bg-background relative">
       <Helmet>
         <title>Jaimish S. Lakhani - Full Stack Developer & Technical Innovator</title>
-        <meta name="description" content="Welcome to Jaimish S. Lakhani's portfolio - Full-stack developer passionate about creating innovative solutions with modern web technologies." />
-        <meta name="keywords" content="Jaimish Lakhani, full-stack developer, React, Node.js, web development, JavaScript, portfolio" />
+        <meta name="description" content="Welcome to Jaimish S. Lakhani's portfolio - Backend engineer specializing in Node.js, microservices, MongoDB, Redis, AWS, and scalable system architecture." />
+        <meta name="keywords" content="Jaimish Lakhani, backend engineer, Node.js, MongoDB, microservices, AWS, Redis, Express.js, Firebase, SQL, system architecture" />
       </Helmet>
+      
+      {/* Mobile Touch Scroll Areas - invisible but touch-responsive */}
+      <div className="md:hidden fixed inset-0 z-30 pointer-events-none">
+        {/* Left scroll area */}
+        <div 
+          className="absolute left-0 top-0 w-16 h-full pointer-events-auto"
+          style={{ touchAction: 'pan-y' }}
+        />
+        {/* Right scroll area */}
+        <div 
+          className="absolute right-0 top-0 w-16 h-full pointer-events-auto"
+          style={{ touchAction: 'pan-y' }}
+        />
+        {/* Top scroll area */}
+        <div 
+          className="absolute top-0 left-16 right-16 h-20 pointer-events-auto"
+          style={{ touchAction: 'pan-y' }}
+        />
+        {/* Bottom scroll area */}
+        <div 
+          className="absolute bottom-0 left-16 right-16 h-20 pointer-events-auto"
+          style={{ touchAction: 'pan-y' }}
+        />
+      </div>
       
       {/* Draggable Profile Card - only on homepage */}
       <div className="absolute inset-0 pointer-events-none z-40">
@@ -62,7 +86,7 @@ const DynamicHomepage = () => {
                 </div>
               </div>
               <p className="text-text-secondary mb-4 max-w-md">
-                Full-stack developer passionate about creating innovative solutions that drive business growth and user satisfaction.
+                Backend engineer passionate about building scalable microservices, distributed systems, and high-performance APIs that drive business growth.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-text-secondary hover:text-text-primary transition-colors">
@@ -91,7 +115,6 @@ const DynamicHomepage = () => {
               <ul className="space-y-2 text-text-secondary">
                 <li><a href="/project-showcase-galaxy" className="hover:text-text-primary transition-colors">Projects</a></li>
                 <li><a href="/technical-mastery-center" className="hover:text-text-primary transition-colors">Skills</a></li>
-                <li><a href="/professional-journey-hub" className="hover:text-text-primary transition-colors">About</a></li>
                 <li><a href="/collaboration-studio" className="hover:text-text-primary transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -99,10 +122,10 @@ const DynamicHomepage = () => {
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-text-secondary">
-                <li>Full-Stack Development</li>
-                <li>React Applications</li>
-                <li>API Development</li>
-                <li>Cloud Solutions</li>
+                <li>Backend Development</li>
+                <li>Microservices Architecture</li>
+                <li>API Development & Integration</li>
+                <li>Cloud Solutions (AWS)</li>
               </ul>
             </div>
           </div>

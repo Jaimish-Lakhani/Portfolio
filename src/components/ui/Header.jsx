@@ -12,10 +12,8 @@ const Header = () => {
   const navigationItems = [
     { name: 'Home', path: '/dynamic-homepage', icon: 'Home' },
     { name: 'Projects', path: '/project-showcase-galaxy', icon: 'Folder' },
-    { name: 'Journey', path: '/professional-journey-hub', icon: 'MapPin' },
     { name: 'Skills', path: '/technical-mastery-center', icon: 'Code' },
     { name: 'Collaborate', path: '/collaboration-studio', icon: 'Users' },
-    { name: 'Network', path: '/professional-network', icon: 'Globe' },
   ];
 
   useEffect(() => {

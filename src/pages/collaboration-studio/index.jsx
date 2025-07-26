@@ -2,9 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
-import CollaborationContexts from './components/CollaborationContexts';
-import CommunicationArtifacts from './components/CommunicationArtifacts';
-import TestimonialsSection from './components/TestimonialsSection';
 import PartnershipPhilosophy from './components/PartnershipPhilosophy';
 import ContactSection from './components/ContactSection';
 
@@ -21,9 +18,6 @@ const CollaborationStudio = () => {
     
     <main className="pt-16 lg:pt-20">
       <HeroSection />
-      <CollaborationContexts />
-      <CommunicationArtifacts />
-      <TestimonialsSection />
       <PartnershipPhilosophy />
       <ContactSection />
     </main>

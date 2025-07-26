@@ -1,21 +1,14 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
-import ProjectCard from './components/ProjectCard';
-import ProjectFilter from './components/ProjectFilter';
 import ProjectModal from './components/ProjectModal';
-import FeaturedProject from './components/FeaturedProject';
-import ProjectStats from './components/ProjectStats';
+import ScrollStack, { ScrollStackItem } from '../../components/ui/ScrollStack';
 
 const ProjectShowcaseGalaxy = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedTech, setSelectedTech] = useState('All');
-  const [selectedStatus, setSelectedStatus] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [viewMode, setViewMode] = useState('grid'); // grid or list
 
   // Mock project data
   const projects = [
@@ -27,42 +20,61 @@ const ProjectShowcaseGalaxy = () => {
       status: "Live",
       rating: 4.9,
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      description: "A comprehensive e-commerce solution that transformed online retail experience with AI-powered recommendations and seamless checkout process.",
-      technologies: ["React", "Node.js", "MongoDB", "AWS", "Stripe", "Redis"],
+      description: "A comprehensive e-commerce backend solution that handles 1M+ daily transactions with microservices architecture and real-time data processing.",
+      technologies: ["Node.js", "Express.js", "MongoDB", "Redis", "AWS", "Docker", "Kubernetes"],
       metrics: {
-        performance: "98%",
-        users: "50K+",
-        impact: "+180%"
+        performance: "99.8%",
+        users: "1M+",
+        impact: "+280%"
       },
-      demoUrl: "https://demo-ecommerce.example.com",
-      githubUrl: "https://github.com/example/ecommerce",
-      challenge: `The client needed a modern e-commerce platform that could handle high traffic volumes while providing personalized shopping experiences. The existing system was outdated, slow, and couldn't scale with growing demand.`,
-      approach: `I implemented a microservices architecture using React for the frontend and Node.js for the backend. The solution included AI-powered product recommendations, real-time inventory management, and a streamlined checkout process.`,
-      solution: `The final platform featured a responsive design, advanced search capabilities, personalized user experiences, and robust payment processing. Performance optimizations reduced load times by 60%.`,
-      architecture: `Frontend: React 18 + TypeScript + Tailwind CSS
-Backend: Node.js + Express + MongoDB
-Infrastructure: AWS (EC2, S3, CloudFront)
-Payment: Stripe API integration
-Cache: Redis for session management`,
+      demoUrl: "https://api-ecommerce.example.com/docs",
+      githubUrl: "https://github.com/example/ecommerce-backend",
+      challenge: `The client needed a scalable backend system that could handle massive traffic spikes during sales events while maintaining sub-100ms response times and 99.9% uptime.`,
+      approach: `I designed a microservices architecture using Node.js and Express.js, implemented intelligent caching with Redis, and deployed on AWS with auto-scaling. The system handles payment processing, inventory management, and real-time analytics.`,
+      solution: `The final system processes 10,000+ concurrent requests with average response times of 45ms. Microservices architecture enables independent scaling and deployment of different components.`,
+      architecture: `API Gateway: Express.js with rate limiting and authentication
+Services: User Management, Product Catalog, Order Processing, Payment
+Database: MongoDB with read replicas and sharding
+Cache: Redis Cluster for sessions and frequently accessed data
+Infrastructure: AWS ECS with auto-scaling groups
+Monitoring: CloudWatch + ELK Stack`,
       features: [
-        "AI-powered product recommendations",
-        "Real-time inventory tracking",
-        "Multi-payment gateway integration",
-        "Advanced search and filtering",
-        "Mobile-responsive design",
-        "Admin dashboard with analytics"
+        "Microservices architecture with service mesh",
+        "Real-time inventory and order processing",
+        "Advanced caching strategies with Redis",
+        "Auto-scaling infrastructure on AWS",
+        "Comprehensive API documentation with Swagger",
+        "Real-time analytics and monitoring dashboard",
+        "Secure payment processing with multiple gateways",
+        "Event-driven architecture with message queues"
       ],
-      codeSnippet: `// Product recommendation engine
-const getRecommendations = async (userId, productId) => {
-  const userHistory = await getUserPurchaseHistory(userId);
-  const similarProducts = await findSimilarProducts(productId);
+      codeSnippet: `// High-performance API endpoint with caching
+const express = require('express');
+const redis = require('redis');
+const app = express();
+const cache = redis.createClient();
+
+app.get('/api/products/:category', async (req, res) => {
+  const { category } = req.params;
+  const cacheKey = \`products:\${category}\`;
   
-  return aiEngine.generateRecommendations({
-    userHistory,
-    similarProducts,
-    trending: await getTrendingProducts()
-  });
-};`,
+  // Check cache first
+  const cached = await cache.get(cacheKey);
+  if (cached) {
+    return res.json(JSON.parse(cached));
+  }
+  
+  // Fetch from database with optimized query
+  const products = await Product.find({ category })
+    .populate('reviews', 'rating')
+    .select('name price description images stock')
+    .lean();
+  
+  // Cache for 5 minutes
+  await cache.setex(cacheKey, 300, JSON.stringify(products));
+  
+  res.json(products);
+});`,
       impactMetrics: [
         { label: "Conversion Rate", value: "+180%", change: "↑ 45% vs previous" },
         { label: "Page Load Time", value: "1.2s", change: "↓ 60% improvement" },
@@ -160,7 +172,7 @@ def get_patient_record(request, patient_id):
       rating: 4.7,
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
       description: "Advanced trading platform with real-time market data, algorithmic trading capabilities, and comprehensive portfolio management.",
-      technologies: ["React", "TypeScript", "WebSocket", "Python", "Redis", "Kafka"],
+      technologies: ["Node.js", "TypeScript", "WebSocket", "Python", "Redis", "Kafka"],
       metrics: {
         performance: "99%",
         users: "15K+",
@@ -171,7 +183,7 @@ def get_patient_record(request, patient_id):
       challenge: `Traditional trading platforms lacked real-time responsiveness and advanced analytics. Users needed a platform that could handle high-frequency trading with minimal latency.`,
       approach: `Built a high-performance platform using WebSocket connections for real-time data, implemented algorithmic trading engines, and created intuitive dashboards for portfolio management.`,
       solution: `The platform provides sub-millisecond trade execution, advanced charting tools, risk management features, and automated trading strategies.`,
-      architecture: `Frontend: React + TypeScript + WebSocket
+      architecture: `Frontend: Next.js + TypeScript + WebSocket
 Backend: Python FastAPI + Celery
 Message Queue: Apache Kafka
 Cache: Redis for real-time data
@@ -327,7 +339,7 @@ const generateLearningPath = async (studentId, subject) => {
     {
       id: 6,
       title: "Supply Chain Optimization",category: "Enterprise Software",year: "2024",status: "Live",rating: 4.5,image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",description: "Advanced supply chain management system with predictive analytics, real-time tracking, and automated optimization algorithms.",
-      technologies: ["React", "Python", "Apache Spark", "Kubernetes", "Blockchain"],
+      technologies: ["Node.js", "Python", "Apache Spark", "Kubernetes", "Blockchain"],
       metrics: {
         performance: "96%",users: "8K+",impact: "+140%"
       },
@@ -335,7 +347,7 @@ const generateLearningPath = async (studentId, subject) => {
       challenge: `Global supply chains faced visibility issues, inefficient routing, and lack of predictive capabilities to handle disruptions and optimize costs.`,
       approach: `Built a comprehensive platform using machine learning for demand forecasting, blockchain for transparency, and real-time analytics for optimization.`,
       solution: `The system provides end-to-end supply chain visibility, predictive analytics for demand planning, and automated optimization for cost reduction.`,
-      architecture: `Frontend: React + Redux + Material-UI
+      architecture: `Frontend: Next.js + Redux + Material-UI
 Backend: Python Django + Celery
 Analytics: Apache Spark + MLlib
 Infrastructure: Kubernetes + Docker
@@ -375,32 +387,6 @@ def optimize_supply_chain(demand_forecast, inventory_levels):
     }
   ];
 
-  // Mock stats data
-  const stats = {
-    totalProjects: 25,
-    liveProjects: 18,
-    happyClients: 50,
-    technologies: 30
-  };
-
-  // Get unique categories and technologies for filtering
-  const categories = ['All', ...new Set(projects.map(p => p.category))];
-  const technologies = ['All', ...new Set(projects.flatMap(p => p.technologies))];
-
-  // Featured project (first project)
-  const featuredProject = projects[0];
-
-  // Filter projects based on selected filters
-  const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
-      const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
-      const techMatch = selectedTech === 'All' || project.technologies.includes(selectedTech);
-      const statusMatch = selectedStatus === 'All' || project.status === selectedStatus;
-      
-      return categoryMatch && techMatch && statusMatch;
-    });
-  }, [selectedCategory, selectedTech, selectedStatus]);
-
   const handleViewDetails = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -412,173 +398,153 @@ def optimize_supply_chain(demand_forecast, inventory_levels):
     }
   };
 
-  const handleClearFilters = () => {
-    setSelectedCategory('All');
-    setSelectedTech('All');
-    setSelectedStatus('All');
-  };
-
   return (
     <div className="min-h-screen bg-background">
-        <Helmet>
-          <title>Project Showcase Galaxy - Jaimish S. Lakhani Portfolio</title>
-          <meta name="description" content="Explore my comprehensive project portfolio featuring web applications, mobile apps, and innovative solutions across various technologies." />
-          <meta name="keywords" content="projects, web development, mobile apps, portfolio, React, Node.js, full-stack" />
-        </Helmet>
-        
-        <Header />
+      <Helmet>
+        <title>Project Showcase Galaxy - Jaimish S. Lakhani Portfolio</title>
+        <meta name="description" content="Explore my comprehensive project portfolio featuring web applications, mobile apps, and innovative solutions across various technologies." />
+        <meta name="keywords" content="projects, web development, mobile apps, portfolio, Node.js, backend, microservices" />
+      </Helmet>
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="p-3 bg-accent rounded-xl">
-                <Icon name="Rocket" size={32} className="text-white" />
+      <Header />
+      
+      {/* Full Screen ScrollStack */}
+      <div className="h-screen pt-16">
+        <ScrollStack 
+          className="w-full h-full"
+          itemDistance={150}
+          itemScale={0.02}
+          itemStackDistance={25}
+          stackPosition="20%"
+          scaleEndPosition="10%"
+          baseScale={0.9}
+          blurAmount={0.5}
+        >
+          {projects.map((project) => (
+            <ScrollStackItem 
+              key={project.id}
+              itemClassName="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+            >
+              <div className="flex flex-col lg:flex-row gap-6 h-full overflow-hidden">
+                {/* Project Image */}
+                <div className="lg:w-1/3 flex-shrink-0">
+                  <div className="relative h-48 lg:h-full rounded-2xl overflow-hidden bg-gradient-to-br from-brand-primary to-brand-secondary">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute top-4 left-4">
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                        project.status === 'Live' 
+                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
+                          : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+                      }`}>
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Project Content */}
+                <div className="lg:w-2/3 flex flex-col min-h-0 overflow-hidden">
+                  <div className="flex-1 min-h-0 overflow-y-auto pr-2">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-text-primary mb-2">
+                          {project.title}
+                        </h3>
+                        <div className="flex items-center space-x-4 text-sm text-text-secondary">
+                          <span className="flex items-center space-x-1">
+                            <Icon name="Calendar" size={14} />
+                            <span>{project.year}</span>
+                          </span>
+                          <span className="flex items-center space-x-1">
+                            <Icon name="Tag" size={14} />
+                            <span>{project.category}</span>
+                          </span>
+                          <div className="flex items-center space-x-1">
+                            <Icon name="Star" size={14} className="text-yellow-500" />
+                            <span>{project.rating}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-text-secondary mb-4 text-sm line-clamp-2">
+                      {project.description}
+                    </p>
+                    
+                    {/* Technologies */}
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-surface text-text-secondary rounded-full text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <span className="px-2 py-1 bg-surface text-text-secondary rounded-full text-xs font-medium">
+                            +{project.technologies.length - 4}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  {/* Action Buttons - Fixed at bottom */}
+                  <div className="flex-shrink-0 pt-3 border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex gap-2">
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        onClick={() => handleViewDetails(project)}
+                        iconName="Eye"
+                        iconPosition="left"
+                        className="flex-1 text-xs py-2"
+                      >
+                        Details
+                      </Button>
+                      {project.demoUrl && (
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          onClick={() => handleViewDemo(project)}
+                          iconName="ExternalLink"
+                          iconPosition="left"
+                          className="flex-1 text-xs py-2"
+                        >
+                          Demo
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => window.open(project.githubUrl, '_blank')}
+                          iconName="Github"
+                          iconPosition="left"
+                          className="flex-1 text-xs py-2"
+                        >
+                          Code
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gradient">
-                Project Galaxy
-              </h1>
-            </div>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Explore a universe of innovative solutions where technical excellence meets business impact. 
-              Each project represents a journey from challenge to transformation.
-            </p>
-          </div>
-
-          {/* Project Stats */}
-          <ProjectStats stats={stats} />
-        </div>
-      </section>
-
-      {/* Featured Project */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FeaturedProject
-            project={featuredProject}
-            onViewDetails={handleViewDetails}
-            onViewDemo={handleViewDemo}
-          />
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="py-16 bg-surface/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-text-primary mb-2">
-                All Projects
-              </h2>
-              <p className="text-text-secondary">
-                Discover the full spectrum of solutions and innovations
-              </p>
-            </div>
-            
-            {/* View Mode Toggle */}
-            <div className="flex items-center space-x-2 bg-surface rounded-lg p-1">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-md transition-colors duration-200 ${
-                  viewMode === 'grid' ?'bg-background text-text-primary shadow-sm' :'text-text-secondary hover:text-text-primary'
-                }`}
-              >
-                <Icon name="Grid3X3" size={20} />
-              </button>
-              <button
-                onClick={() => setViewMode('list')}
-                className={`p-2 rounded-md transition-colors duration-200 ${
-                  viewMode === 'list' ?'bg-background text-text-primary shadow-sm' :'text-text-secondary hover:text-text-primary'
-                }`}
-              >
-                <Icon name="List" size={20} />
-              </button>
-            </div>
-          </div>
-
-          {/* Project Filters */}
-          <ProjectFilter
-            categories={categories}
-            technologies={technologies}
-            selectedCategory={selectedCategory}
-            selectedTech={selectedTech}
-            selectedStatus={selectedStatus}
-            onCategoryChange={setSelectedCategory}
-            onTechChange={setSelectedTech}
-            onStatusChange={setSelectedStatus}
-            onClearFilters={handleClearFilters}
-            projectCount={filteredProjects.length}
-          />
-
-          {/* Projects Grid */}
-          {filteredProjects.length > 0 ? (
-            <div className={`grid gap-8 ${
-              viewMode === 'grid' ?'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :'grid-cols-1'
-            }`}>
-              {filteredProjects.slice(1).map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onViewDetails={handleViewDetails}
-                  onViewDemo={handleViewDemo}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <Icon name="Search" size={48} className="text-text-tertiary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-text-primary mb-2">
-                No projects found
-              </h3>
-              <p className="text-text-secondary mb-6">
-                Try adjusting your filters to see more projects
-              </p>
-              <Button
-                variant="primary"
-                onClick={handleClearFilters}
-                iconName="RotateCcw"
-                iconPosition="left"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-brand-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Your Next Project?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let's collaborate to bring your vision to life with cutting-edge technology and innovative solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => window.location.href = '/collaboration-studio'}
-              iconName="MessageCircle"
-              iconPosition="left"
-            >
-              Start Collaboration
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              onClick={() => window.location.href = '/technical-mastery-center'}
-              iconName="Code"
-              iconPosition="left"
-              className="text-white border-white hover:bg-white hover:text-accent"
-            >
-              View Skills
-            </Button>
-          </div>
-        </div>
-      </section>
+            </ScrollStackItem>
+          ))}
+        </ScrollStack>
+      </div>
 
       {/* Project Detail Modal */}
       <ProjectModal
